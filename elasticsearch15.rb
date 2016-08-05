@@ -1,6 +1,6 @@
 class Elasticsearch15 < Formula
   desc "Installs Elasticsearch 1.5.2"
-  homepage "https://github.com/bharadwaj6/homebrew-elasticsearch15"
+  homepage "https://github.com/customink/homebrew-elasticsearch15"
   url "https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.5.2.tar.gz"
   version "1.5.2"
   sha256 "efae7897367ac3fa8057d02fad31c72e215b6edef599b63e373d3ce0c1049a14"
@@ -73,7 +73,7 @@ class Elasticsearch15 < Formula
     EOS
   end
 
-  plist_options :manual => "elasticsearch --config=#{HOMEBREW_PREFIX}/opt/elasticsearch17/config/elasticsearch.yml"
+  plist_options :manual => "elasticsearch --config=#{HOMEBREW_PREFIX}/opt/elasticsearch15/config/elasticsearch.yml"
 
   def plist; <<-EOS.undent
       <?xml version="1.0" encoding="UTF-8"?>
@@ -99,9 +99,9 @@ class Elasticsearch15 < Formula
           <key>WorkingDirectory</key>
           <string>#{var}</string>
           <key>StandardErrorPath</key>
-          <string>#{var}/log/elasticsearch17.log</string>
+          <string>#{var}/log/elasticsearch15.log</string>
           <key>StandardOutPath</key>
-          <string>#{var}/log/elasticsearch17.log</string>
+          <string>#{var}/log/elasticsearch15.log</string>
         </dict>
       </plist>
     EOS
