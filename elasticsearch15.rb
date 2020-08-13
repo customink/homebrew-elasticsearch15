@@ -40,6 +40,10 @@ class Elasticsearch15 < Formula
 
       # 3. Bind to loopback IP for laptops roaming different networks
       s.gsub!(/#\s*network\.host\: [^\n]+/, "network.host: 127.0.0.1")
+
+      # 4. Bind to ports 9400/9500 so not to conflict with strap elasticsearch
+      s.gsub!(/#\s*http\.port\: [^\n]+/, "http.port: 9400")
+      s.gsub!(/#\s*transport\.tcp\.port\: [^\n]+/, "transport.tcp.port: 9500")
     end
 
     inreplace "#{bin}/elasticsearch.in.sh" do |s|
